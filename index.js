@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const Blog = require('./models/Blog');
 const Comment = require('./models/Comment');
-
+const env = require('dotenv').config();
 const app = express();
 app.use(express.json());
 
-const uri = "mongodb+srv://yusif:z6jY8DwCF3-SbK*@blogs.muhfbkj.mongodb.net/blogs?retryWrites=true&w=majority";
+const uri =proccess.env.MONGODB_URI ;
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(uri, {
