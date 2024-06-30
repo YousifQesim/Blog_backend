@@ -1,14 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const Blog = require('./models/Blog');
 const Comment = require('./models/Comment');
 const env = require('dotenv').config();
 const app = express();
+app.use(cors()); 
 app.use(express.json());
 
-const uri =proccess.env.MONGODB_URI ;
-
+const uri =process.env.MONGODB_URI ;
+console.log(uri);
 // Connect to MongoDB using Mongoose
 mongoose.connect(uri, {
   useNewUrlParser: true,
